@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* User Requested Cinematic Red, Black & White Palette */
+    --primary-red: #F20D2F;
+    --dark-red: #A8061F;
+    --black: #080808;
+    --white: #FFFFFF;
+    --dark-gray: #171717;
+    --medium-gray: #262626;
+    --light-gray: #525252;
+    --border-gray: #333333;
+    --light-bg: #FAFAF8;
+
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    color-scheme: dark;
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  body {
+    background-color: var(--black);
+    color: var(--white);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Custom Cinematic Red Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080808;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #262626;
+    border-radius: 4px;
+    border: 1px solid #333333;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #F20D2F;
+  }
+}
+
+/* Typography & Utility Helpers */
+.font-serif-editorial {
+  font-family: var(--font-serif);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-mono-tech {
+  font-family: var(--font-mono);
+}
+
+/* High Contrast Cinematic Panel Utilities */
+.glass-panel {
+  background: #111111;
+  border: 1px solid #262626;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.glass-panel-interactive {
+  background: #111111;
+  border: 1px solid #262626;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-interactive:hover {
+  background: #171717;
+  border-color: #F20D2F;
+  box-shadow: 0 20px 40px rgba(242, 13, 47, 0.15);
+  transform: translateY(-2px);
+}
+
+.text-gradient-red {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F20D2F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-box-red {
+  box-shadow: 0 0 30px rgba(242, 13, 47, 0.25);
+}
+
+/* Animated Grid Background */
+@keyframes gridMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
+
+.bg-grid-animated {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(242, 13, 47, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(242, 13, 47, 0.08) 1px, transparent 1px);
+  animation: gridMove 25s linear infinite;
+}
+
+/* Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .bg-grid-animated {
+    animation: none !important;
+  }
+}
+
