@@ -13,8 +13,8 @@ Welcome to the official developer portfolio repository of **DHARANESH R**. This 
 
 Designed specifically for IT recruiters, core ECE placement drives, software companies, hackathons, and engineering showcases.
 
+- **Live Deployed Site**: [https://dharanesh-portfolio.vercel.app/](https://dharanesh-portfolio.vercel.app/)
 - **GitHub Repository**: [https://github.com/Dharanesh05/DHARANESH-PORTFOLIO.git](https://github.com/Dharanesh05/DHARANESH-PORTFOLIO.git)
-- **Live Site**: [http://localhost:5173/](http://localhost:5173/)
 
 ---
 
