@@ -65,7 +65,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Flame,
 };
 
-const categories: SkillCategory[] = ['ECE CORE', 'PROGRAMMING', 'AI / SOFTWARE', 'TOOLS'];
+const categories: SkillCategory[] = ['PROGRAMMING'];
 
 export const Skills: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<SkillCategory | 'ALL'>('ALL');
@@ -103,11 +103,10 @@ export const Skills: React.FC = () => {
         <div className="mb-10 flex flex-wrap items-center justify-center gap-2.5">
           <button
             onClick={() => setActiveCategory('ALL')}
-            className={`px-4 py-2 rounded-xl text-xs font-mono-tech font-bold transition-all cursor-pointer ${
-              activeCategory === 'ALL'
+            className={`px-4 py-2 rounded-xl text-xs font-mono-tech font-bold transition-all cursor-pointer ${activeCategory === 'ALL'
                 ? 'bg-[#F20D2F] text-[#FFFFFF] shadow-md'
                 : 'bg-[#111111] text-[#525252] border border-[#262626] hover:text-[#FFFFFF] hover:border-[#F20D2F]'
-            }`}
+              }`}
           >
             ALL SKILLS ({skillsData.length})
           </button>
@@ -116,11 +115,10 @@ export const Skills: React.FC = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-xl text-xs font-mono-tech font-bold transition-all cursor-pointer ${
-                activeCategory === cat
+              className={`px-4 py-2 rounded-xl text-xs font-mono-tech font-bold transition-all cursor-pointer ${activeCategory === cat
                   ? 'bg-[#F20D2F] text-[#FFFFFF] shadow-md'
                   : 'bg-[#111111] text-[#525252] border border-[#262626] hover:text-[#FFFFFF] hover:border-[#F20D2F]'
-              }`}
+                }`}
             >
               {cat} ({skillsData.filter((s) => s.category === cat).length})
             </button>
